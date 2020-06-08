@@ -68,7 +68,7 @@ const getConfig = (data) => {
 };
 
 
-const LineChart = (data) => {
+const LineChart = ({ data }) => {
     const chartOptions = getConfig(data);
     return(<HighchartsReact
         highcharts={Highcharts}

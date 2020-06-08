@@ -20,9 +20,10 @@ const NewListStore = new Store({},
             statusLabel: 'newsListStatus',
             parse: (output) => {
                var data = output.data || [];
-               data.hits = map(data.hits, () => {
-                
-               })
+               return data;
+              /* data.hits = map(data.hits, () => {
+
+               }) */
             }
         },
     ]);

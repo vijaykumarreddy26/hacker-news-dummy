@@ -4,19 +4,19 @@ import Count from '../../atoms/count';
 import UpVote from '../../atoms/upvote';
 import NewsDetail from '../../atoms/description';
 
-const NewsItem = (item) => {
-    return(<tr>
+const NewsItem = ({item}) => {
+    return(<tr key={item.id}>
         <td > 
-            <Count></Count>
+            <Count  count={item.num_comments}></Count>
         </td>
         <td>
-            <Count></Count>
+            <Count count={item.points}></Count>
         </td>
         <td>
             <UpVote></UpVote>
         </td>
         <td>
-            <NewsDetail></NewsDetail>
+            <NewsDetail {...item}></NewsDetail>
         </td>
     </tr>)
 }

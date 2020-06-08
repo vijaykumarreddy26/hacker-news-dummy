@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Styles from './index.module.css';
 import { getDomainName, timeSince } from '../../../utils';
 
-const NewsDetail = ({title, author, createdAt, url}) => {
+const NewsDetail = ({title, author, created_at, url}) => {
     const domainName = getDomainName(url);
-    const time = timeSince(createdAt);
+    const time = timeSince(created_at);
     return(
         <div>
             <div className={Styles.title}>
@@ -31,7 +31,7 @@ const NewsDetail = ({title, author, createdAt, url}) => {
 NewsDetail.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
-    createdAt: PropTypes.number,
+    created_at: PropTypes.number,
     url: PropTypes.string,
 }
 
