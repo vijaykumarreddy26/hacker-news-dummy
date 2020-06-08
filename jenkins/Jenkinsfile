@@ -1,0 +1,40 @@
+pipeline {
+    agent {
+        docker {
+            image 'node:13'
+        }
+    }
+    environment {
+        CI = 'true'
+        HOME = '.'
+    }
+    stages {
+        stage('server npm install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('client npm install') {
+          steps {
+            sh "cd client"
+            sh "npm install"
+          }
+        }
+        stage('client build'){
+            steps{
+                sh 'npm run build'
+            }
+        }
+       	stage('SSH transfer') {
+          steps {
+                script {
+                    sshPublisher(
+                        continueOnError: false,
+                        failOnError: true,
+                        publishers: [
+                        ])
+                }
+            }
+		    }
+    }
+}
