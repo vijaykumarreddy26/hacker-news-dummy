@@ -4,7 +4,7 @@ import Label from '../../atoms/headerlabel';
 import NewsItem from '../../molecules/newsitem';
 
 const News = ({
-    pageList
+    pageList = []
 }) => {
     return (
         <table>

@@ -12,7 +12,7 @@ exports.renderTemplate = async () => {
         const response = await fetch('http://localhost:3000')
         html = await response.text();
     } else {
-        const html = await fs.promises.readFile(path.resolve('./build/index.html'), 'utf8');
+        html = await fs.promises.readFile(path.resolve('./build/index.html'), 'utf8');
     }
 
     return html.replace(

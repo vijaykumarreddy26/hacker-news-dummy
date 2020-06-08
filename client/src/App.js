@@ -5,14 +5,15 @@ import ListStore from './stores/liststore';
 import News from './components/organisms/news';
 import DefaultTemplateStyle from './components/templates/index.module.css';
 import Header from './components/organisms/header';
+import LineChart from './components/organisms/chart';
 
 function App({match}) {
 
-  const [newsList] = useStore(ListStore);
+  const [listStoreData] = useStore(ListStore);
 
   const { 
-      newList = [],
-    } = newsList;
+    newsList = {},
+    } = listStoreData;
 
   useEffect(() => {
     ListStore.set({
@@ -25,13 +26,13 @@ function App({match}) {
   return (<Fragment>
       <Header styleClass={DefaultTemplateStyle.mainHeader}></Header>
       <div className={DefaultTemplateStyle.mainContainer}>
-        <News pageList={newList}>
+        <News pageList={newsList.hits}>
 
         </News>
       </div>
       <div className={DefaultTemplateStyle.graphWrapper}>
         <div className={DefaultTemplateStyle.graph}>
-
+            <LineChart data={newsList.hits || []}></LineChart>
         </div>
      </div>
   </Fragment>
