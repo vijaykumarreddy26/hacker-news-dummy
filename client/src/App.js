@@ -17,13 +17,13 @@ function App({match}) {
     } = listStoreData;
 
   useEffect(() => {
-     var latestData = ListStore.get();
-     if(latestData.pageNo !== match.params.pageNo){
+     // var latestData = ListStore.get();
+     // if(latestData.pageNo !== match.params.pageNo){
         ListStore.set({
             pageNo: match.params.pageNo || 1,
         });
         ListStore.load('LoadNewsList');
-     }
+     //}
   }, [match.params.pageNo]);
 
 

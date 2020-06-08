@@ -24,7 +24,7 @@ exports.renderTemplate = async (ctx) => {
         const response = await fetch('http://localhost:3000')
         html = await response.text();
     } else {
-        html = await fs.promises.readFile(path.resolve('./build/index.html'), 'utf8');
+        html = await fs.promises.readFile(path.resolve('public/index.html'), 'utf8');
     }
 
     return html.replace(
