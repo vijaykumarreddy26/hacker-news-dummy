@@ -1,18 +1,19 @@
 import Store from '../libs/store';
-import map from 'lodash.map'
+import isEmpty from 'lodash.isempty';
+import { getServerInitialData, getDomain } from '../utils';
 
 const NewListStore = new Store({},
     [
         {
             label: 'LoadNewsList',
             request: {
-                url: `/api/v1/search`,
                 method: 'get',
             },
             formatter: (data, request) => {
+                request.url = `${getDomain()}/api/v1/search`
                 request.query ={
                     tags: 'story',
-                    page: data.page || 0,
+                    page: data.pageNo || 0,
                 }
                 return request;  
             },
@@ -26,6 +27,18 @@ const NewListStore = new Store({},
                }) */
             }
         },
-    ]);
+    ],
+    null,
+    () => {
+        const serverData = getServerInitialData();
+        let initialData = {};
+		if (!isEmpty(serverData)) {
+			initialData = {
+				newsList: serverData.newsList,
+				pageNo: serverData.pageNo,
+            }
+		}
+		return initialData;
+	});
 
 export default NewListStore;

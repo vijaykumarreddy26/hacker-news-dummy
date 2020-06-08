@@ -1,9 +1,10 @@
 const fetch = require("node-fetch");
+const templates = require('../base.template');
 
 const AgloaUrl = "http://hn.algolia.com/api/v1/search";
 
 /**
- * Ge data from algolia news
+ * Get data from algolia news api
  * @constructor
  * @param {string} tags - Valid User mongoose id.
  * @param {string} numericFilters - Hash.
@@ -21,3 +22,28 @@ exports.fetchData = async (ctx, next) => {
       }
 
 }
+
+
+/**
+ * Ge data from algolia news
+ * @constructor
+ */
+exports.fetchDataForHtml = async (ctx, next) => {
+    try{
+      const pageNo = ctx.params.pageNo || 1;
+      const url = `${AgloaUrl}?tags=story&page=${pageNo}`
+      const response = await fetch(url);
+      const json = await response.json();
+      ctx.pageData =json;
+      ctx.pageNo = pageNo;
+    } catch(e){
+        ctx.pageData ='';
+    }
+   await next();
+}
+
+exports.renderTemplate = async (ctx, next) => {
+    const body =  await templates.renderTemplate(ctx);
+    ctx.body = body;
+}
+

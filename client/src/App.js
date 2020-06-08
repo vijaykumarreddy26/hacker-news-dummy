@@ -13,13 +13,17 @@ function App({match}) {
 
   const { 
     newsList = {},
+    pageNo
     } = listStoreData;
 
   useEffect(() => {
-    ListStore.set({
-        pageNo: match.params.pageNo || 0,
-    });
-    ListStore.load('LoadNewsList');
+     var latestData = ListStore.get();
+     if(latestData.pageNo !== match.params.pageNo){
+        ListStore.set({
+            pageNo: match.params.pageNo || 1,
+        });
+        ListStore.load('LoadNewsList');
+     }
   }, [match.params.pageNo]);
 
 

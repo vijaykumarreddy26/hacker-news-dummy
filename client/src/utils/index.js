@@ -1,8 +1,15 @@
+import isEmpty from 'lodash.isempty';
+
+
 export const getDomainName = (url) => {
     if(!url){
         return '';
     }
     return new URL(url).hostname;
+}
+
+export const getDomain = () => {
+    return window.location.protocol+'//'+window.location.host;
 }
 
 export const timeSince = (timeStamp) => {
@@ -29,4 +36,14 @@ export const timeSince = (timeStamp) => {
 
     // pluralise and append suffix
     return a[0] + ' ' + a[1] + (a[0] === 1 ? '' : 's') + suffix;
+}
+
+
+export const getServerInitialData = () => {
+	if (typeof window == 'undefined') {
+        const initialServerData ={};
+		return !isEmpty(initialServerData) ? JSON.parse(unescape(initialServerData)) : {};
+	} else {
+		return window.INITIAL_DATA;
+	}
 }

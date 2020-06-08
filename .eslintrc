@@ -1,0 +1,57 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+      "react",
+      "react-hooks"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true,
+          "modules": true
+      }
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"]
+        }
+      }
+    },
+    "extends" : [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb-base","import"
+    ],
+    "rules" : {
+      "arrow-body-style" : "warn",
+      "no-underscore-dangle" :"off",
+      "no-unused-expressions": ["error", {"allowTernary": true}],
+      "import/prefer-default-export": "warn",
+      "indent":["error", 4],
+      "react/display-name": [ "off", { "ignoreTranspilerName": true }],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    "globals" : {
+      "Blob": true,
+      "PLATFORM" : true,
+      "document": true,
+      "describe":true,
+      "test":true,
+      "expect":true,
+      "beforeAll": true,
+      "window": true,
+      "localStorage":true,
+      "CONFIG": true,
+      "SERVER_URL": true,
+      "FileReader": true,
+      "fetch": true,
+      "FormData": true,
+      "Request": true,
+      "navigator": true,
+      "WebSocket": true,
+      "initialServerData": true,
+      "__DEV__": true
+    }
+  }
