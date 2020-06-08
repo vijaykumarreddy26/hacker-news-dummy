@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node ./server/index.js",
-    "client": "npm start --prefix client",
+    "client": "BROWSER=none npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
@@ -14,7 +14,18 @@
   "dependencies": {
     "koa": "^2.12.0",
     "koa-static": "^5.0.0",
-    "node-fetch": "^2.6.0"
+    "lodash.assign": "^4.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.find": "^4.6.0",
+    "lodash.get": "^4.4.2",
+    "lodash.isempty": "^4.4.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.isfunction": "^3.0.9",
+    "lodash.merge": "^4.6.2",
+    "lodash.reduce": "^4.6.0",
+    "lodash.uniqueid": "^4.0.1",
+    "node-fetch": "^2.6.0",
+    "rxjs": "^6.5.5"
   },
   "devDependencies": {
     "concurrently": "^5.2.0"

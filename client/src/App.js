@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import {} from 'react-router-dom';
+import DefaultTemplateStyle from './components/templates/index.module.css';
+import Header from './components/organisms/header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (<Fragment>
+      <Header styleClass={DefaultTemplateStyle.mainHeader}></Header>
+      <div className={DefaultTemplateStyle.mainContainer}>
+        
+      </div>
+      <div className={DefaultTemplateStyle.graphWrapper}>
+        <div className={DefaultTemplateStyle.graph}>
+
+        </div>
+     </div>
+  </Fragment>
+    
   );
 }
 

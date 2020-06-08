@@ -1,4 +1,4 @@
-# Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS
+# Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS + RxJs + Custom hooks
 
 This Project is setup for modern web application
 
@@ -37,6 +37,6 @@ open [http://localhost:9009](http://localhost:9009)
 Check All the independent  atoms, molecules, organisms and templates
 
 ### Note
-More Enhancement need to abstract create react app setup and css theming
+More Enhancements need to abstract create react app setup and css theming
 
 
