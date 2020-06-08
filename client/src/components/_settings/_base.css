@@ -1,0 +1,19 @@
+@import './_variables.css';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: var(--base-font-family);
+    font-size: var(--base-font-size);
+    background: white;
+    font-weight: var(--base-font-weight);
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}

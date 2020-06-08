@@ -1,0 +1,21 @@
+:root {
+    /*
+    * Fonts
+    */
+    
+    --base-font-family: Verdana, Geneva, sans-serif;
+    --base-font-size: 10pt;
+    --base-font-lineheight: 1.5em;
+    --base-font-weight: 300;
+
+    /*
+    * Colors
+    */
+    --white: #FFFFFF;
+    --brand: #ff6610;
+    --get-color-type: var(--grey-1);
+    --success: #2a7e2e;
+    --atenttion: #2196f3;
+    --wait: #fff8dd;
+    --error: #d92525;
+  }
