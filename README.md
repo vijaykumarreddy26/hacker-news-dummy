@@ -1,5 +1,8 @@
 # Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS + RxJs + Custom hooks
 
+[![Build status][travis-image]][travis-url]
+
+
 This Project is setup for modern web application
 
 Here’s what we will build in this tutorial:
@@ -38,5 +41,15 @@ Check All the independent  atoms, molecules, organisms and templates
 
 ### Note
 More Enhancements need to abstract create react app setup and css theming
+
+## License
+
+[MIT](/LICENSE)
+
+
+[travis-image]: https://img.shields.io/travis/koajs/send.svg?style=flat-square
+[travis-url]: https://travis-ci.org/github/vijaykumarreddy26/hacker-news-dummy
+
+
 
 
