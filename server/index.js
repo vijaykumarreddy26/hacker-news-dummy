@@ -6,6 +6,7 @@ const send = require('koa-send');
 const hackerController = require('./controllers/hackerController');
 
 const app = new Koa();
+const PORT = process.env.PORT || 9000;
 
 app.use(serve(__dirname + '/../public/'));
 // app.use(mount('/static', serve(__dirname + '/static', {defer: true})))
@@ -22,4 +23,4 @@ router.get('/:pageNo?', hackerController.fetchDataForHtml, hackerController.rend
 app.use(router.routes());
 
 
-app.listen(9000);
+app.listen(PORT);
