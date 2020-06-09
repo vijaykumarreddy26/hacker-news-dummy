@@ -3,25 +3,30 @@ import PropTypes from 'prop-types';
 import Styles from './index.module.css';
 import { getDomainName, timeSince } from '../../../utils';
 
-const NewsDetail = ({title, author, created_at, url}) => {
+const NewsDetail = ({title, author, created_at, url, onHide}) => {
     const domainName = getDomainName(url);
     const time = timeSince(created_at);
     return(
         <div>
             <div className={Styles.title}>
-                <p>{title} </p>
+                <p tabIndex="0" className={Styles.inlineText}>{title} </p>
 
                 <span className={Styles.link}>
                     {
                         (url) &&
-                        (<a target="_blank" rel="noopener noreferrer" className={'a'} href={url}>{domainName}</a>)
+                        (<a target="_blank" rel="noopener noreferrer" className={Styles.a} href={url}>{domainName}</a>)
                     }
                     &nbsp;  by <label>{author}</label>
                 </span>
                 <span className={Styles.subtext}> 
-                    <label>
+                    <label tabIndex="0">
                         &nbsp;{time}
                     </label>
+                </span>
+                <span className={Styles.subtext}> 
+                    <a onClick={onHide} tabIndex="0">
+                        &nbsp; [hide]
+                    </a>
                 </span>
             </div>
         </div>

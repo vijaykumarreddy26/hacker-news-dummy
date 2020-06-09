@@ -6,7 +6,7 @@ import Styles from './index.module.css';
 const Count = ({isHighlighted, count}) => {
 
     return(
-        <span
+        <span tabIndex="0"
             className={(isHighlighted)? Styles.selected : ''}
         >
             {count}

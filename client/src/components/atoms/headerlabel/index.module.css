@@ -1,9 +1,17 @@
 .label{
-    font-size: 13pt;
+    font-size: 8pt;
     padding: 5px;
     font-weight: 700;
+    float:left;
 }
 
 .white{
     color: #fff;
+    background: #ff6610;
+}
+.header-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

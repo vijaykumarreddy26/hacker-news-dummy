@@ -1,6 +1,8 @@
 const fetch = require("node-fetch");
 const path = require('path');
 const fs = require('fs');
+const { exec } =  require('child_process');
+
 /*cont ReactDOMServer = require("react-dom/server");
 import { StaticRouter} = require("react-router");
 
@@ -41,3 +43,16 @@ exports.renderTemplate = async (ctx) => {
       </script>`
         )
 };
+
+exports.renderData = async (ctx) => {
+    exec(`node ${resolve('server_renders/listpage.js')} ${req.url} ${escape(JSON.stringify({ doctorDetails: docData, pageMeta: meta, canonicalLink: canonicalLink }))} ${escape(JSON.stringify(global.__APP_CONFIG__))}`, (err, stdout) => {
+        if (err) {
+            error(err)
+            error(`Error occured while fetching as bot for ${req.url}`)
+            renderDoctorMarkup(req, res, docData, meta, structuredData, '', canonicalLink);
+        } else {
+            renderDoctorMarkup(req, res, docData, meta, structuredData, stdout, canonicalLink);
+        }
+    })
+}
+

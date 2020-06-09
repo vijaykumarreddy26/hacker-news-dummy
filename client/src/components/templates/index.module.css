@@ -50,7 +50,7 @@
 }
 
 .pagination {
-    height: 20px;
+    padding: 1rem 2rem;
     width: 100%;
     text-align: right;
 }

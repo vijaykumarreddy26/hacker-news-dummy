@@ -47,3 +47,25 @@ export const getServerInitialData = () => {
 		return window.INITIAL_DATA;
 	}
 }
+
+export const getUserData = () => {
+    let hiddenList = {};
+    try{
+        hiddenList = localStorage.getItem("voteAndHiddenList");
+        if(hiddenList){
+            hiddenList = JSON.parse(hiddenList);
+        } else {
+            hiddenList ={};
+        }
+    }catch(e) {
+
+    }
+    return hiddenList;
+}
+
+export const setUserData = (data) => {
+    try{
+        localStorage.setItem("voteAndHiddenList", JSON.stringify(data));
+    }catch(e) {
+    }
+}

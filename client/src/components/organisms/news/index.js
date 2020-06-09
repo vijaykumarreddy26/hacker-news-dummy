@@ -1,32 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash.get';
 import Label from '../../atoms/headerlabel';
 import NewsItem from '../../molecules/newsitem';
+import Styles from './index.module.css';
 
 const News = ({
-    pageList = []
+    pageList = [],
+    hideVoteNewsList ={}
 }) => {
     return (
-        <table>
-            <thead>
+        <table className={Styles.table}>
+            <thead className={Styles.thead}>
                 <tr>
                     <th>
-                        <Label>Comments</Label>
+                        <Label tabIndex="0">Comments</Label>
                     </th>
                     <th>
-                        <Label>Vote Count</Label>
+                        <Label tabIndex="0">Vote Count</Label>
                     </th>
                     <th>
-                        <Label>Up Vote</Label>
+                        <Label tabIndex="0" >Up Vote</Label>
                     </th>
                     <th>
-                        <Label>News Details</Label>
+                        <Label tabIndex="0">News Details</Label>
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className={Styles.tbody}>
                 {
-                    pageList.map((item) => <NewsItem item={item}></NewsItem>)
+                    pageList.map((item) => (
+                        !get(hideVoteNewsList[item.objectID], 'hide') &&
+                            <NewsItem
+                                upVoteCount={get(hideVoteNewsList[item.objectID], 'count') }
+                                item={item}
+                            ></NewsItem>
+                    )
+                    )
                 }
             </tbody>
         </table>

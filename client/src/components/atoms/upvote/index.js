@@ -3,26 +3,24 @@ import PropTypes from 'prop-types';
 import Styles from './index.module.css';
 
 
-const UpVote = ({isUpVoted, onSelect}) => {
-    if(isUpVoted){
-        return null;
-    }
+const UpVote = ({upVoteCount, onUpVote}) => {
     return(
-        <span
+        <span tabIndex="0"
             className={Styles.upvote}
-            onClick={onSelect}>
-                ▲
+            onClick={onUpVote}>
+                ▲ {(upVoteCount > 0) ? upVoteCount : ''}
+
         </span>
     )
 }
 
 UpVote.propTypes = {
-    isUpVoted: PropTypes.bool,
+    upVoteCount: PropTypes.bool,
     onSelect: PropTypes.func,
 }
 
 UpVote.defaultProps = {
-    isUpVoted: false,
+    upVoteCount: false,
     onSelect: () => {},
 }
 

@@ -6,13 +6,19 @@
 .link{
     font-size: 8pt;
     color: #828282;
+    padding-left:1rem;
 }
 .subtext{
     font-size: 7pt;
     color: #828282;
+    cursor: pointer;
 }
 
 .a {
     text-decoration: none;
+    color: #828282;;
 
+}
+.inlineText {
+    display: inline-block;
 }

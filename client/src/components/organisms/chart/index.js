@@ -1,14 +1,17 @@
 import React from 'react';
 import Highcharts from 'highcharts';
+import get from 'lodash.get';
 import map from 'lodash.map';
 import HighchartsReact from 'highcharts-react-official';
 
-const getConfig = (data) => {
+const getConfig = (data, hideVoteNewsList) => {
     var categores = [];
     var points = [];
     map(data, (value) => {
-        categores.push(value.id);
-        points.push(value.num_comments);
+        if(!get(hideVoteNewsList[value.objectID], 'hide')){
+            categores.push(value.objectID);
+            points.push(value.num_comments);
+        }
     })
     return {
     chart: {
@@ -30,7 +33,15 @@ const getConfig = (data) => {
         }
     },
     xAxis: {
-        categores: categores
+        title: {
+            text: 'ID'
+        },
+        categores: categores,
+        labels: {
+            formatter: function(){
+               return categores[this.value];
+            }
+        }
     },
     legend: {
         layout: 'vertical',
@@ -43,7 +54,6 @@ const getConfig = (data) => {
             label: {
                 connectorAllowed: false
             },
-            pointStart: 2010
         }
     },
 
@@ -68,8 +78,8 @@ const getConfig = (data) => {
 };
 
 
-const LineChart = ({ data }) => {
-    const chartOptions = getConfig(data);
+const LineChart = ({ data, hideVoteNewsList }) => {
+    const chartOptions = getConfig(data, hideVoteNewsList);
     return(<HighchartsReact
         highcharts={Highcharts}
         options={chartOptions}
