@@ -5,6 +5,7 @@ import ListStore from './stores/liststore';
 import News from './components/organisms/news';
 import DefaultTemplateStyle from './components/templates/index.module.css';
 import Header from './components/organisms/header';
+import Pagination from './components/molecules/pagination';
 import LineChart from './components/organisms/chart';
 
 function App({match}) {
@@ -13,7 +14,7 @@ function App({match}) {
 
   const { 
     newsList = {},
-    pageNo
+    pageNo = 0,
     } = listStoreData;
 
   useEffect(() => {
@@ -33,6 +34,9 @@ function App({match}) {
         <News pageList={newsList.hits}>
 
         </News>
+      </div>
+      <div className={DefaultTemplateStyle.pagination}>
+          <Pagination currentPageNo={pageNo} totalPages={newsList.nbPages}></Pagination>
       </div>
       <div className={DefaultTemplateStyle.graphWrapper}>
         <div className={DefaultTemplateStyle.graph}>

@@ -48,3 +48,9 @@
     width: 100%;
     border-bottom: 2px solid #ff6610;
 }
+
+.pagination {
+    height: 20px;
+    width: 100%;
+    text-align: right;
+}

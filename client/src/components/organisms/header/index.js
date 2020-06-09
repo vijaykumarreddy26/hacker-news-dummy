@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../../atoms/logo';
 import Styles from './index.module.css';
 
-const Header = (headerClassName) => {
+const Header = ({headerClassName}) => {
     return ( 
         <header className={headerClassName}>
             <button className={Styles.linkButton} >

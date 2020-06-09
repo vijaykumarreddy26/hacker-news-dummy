@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import ButtonLink from '../../atoms/links';
 import Styles from './index.modules.css';
 
-const Pagination = ({currentPageNo, totalPages}) => {
-    const previous = currentPageNo - 1;
-    const next =  currentPageNo + 1;
+const Pagination = ({currentPageNo = 0, totalPages = 0}) => {
+    const previous = Number(currentPageNo) - 1;
+    const next =  Number(currentPageNo) + 1;
     return(
         <Fragment>
             {
-                (previous > 0) && <ButtonLink to= {`/page/${previous}`} >Previous </ButtonLink>
+                (previous > 0) && <ButtonLink to= {`/${previous}`} >Previous </ButtonLink>
             }
             <span className={Styles.orange}>|</span>
             {   
                 (next <= totalPages) &&
-                <ButtonLink to= {`/page/${next}`}> Next </ButtonLink>
+                <ButtonLink to= {`/${next}`}> Next </ButtonLink>
             }
         </Fragment>);
 };

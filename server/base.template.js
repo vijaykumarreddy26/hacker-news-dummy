@@ -23,6 +23,10 @@ exports.renderTemplate = async (ctx) => {
     if(process.env.NODE_ENV !== 'production'){
         const response = await fetch('http://localhost:3000')
         html = await response.text();
+        html = html.replace(
+            '<base href = "/"/>',
+            '<base href = "http://localhost:3000/"/>'
+        )
     } else {
         html = await fs.promises.readFile(path.resolve('public/index.html'), 'utf8');
     }
@@ -35,8 +39,5 @@ exports.renderTemplate = async (ctx) => {
           window.INITIAL_DATA = ${JSON.stringify({newsList: newsList, pageNo: pageNo})}
           //]]>` : ''}
       </script>`
-        ).replace().replace(
-            '<base href = "/"/>',
-            '<base href = "http://localhost:3000/"/>'
         )
 };
