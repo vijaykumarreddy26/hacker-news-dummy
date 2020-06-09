@@ -22,4 +22,4 @@ router.get('/:pageNo?', hackerController.fetchDataForHtml, hackerController.rend
 app.use(router.routes());
 
 
-app.listen(9000);
+app.listen(80);
