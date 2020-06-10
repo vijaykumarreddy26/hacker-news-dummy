@@ -32,7 +32,7 @@ const News = ({
                     pageList.map((item) => (
                         !get(hideVoteNewsList[item.objectID], 'hide') &&
                             <NewsItem
-                                upVoteCount={get(hideVoteNewsList[item.objectID], 'count') }
+                                upVoteCount={get(hideVoteNewsList[item.objectID], 'votes') }
                                 item={item}
                             ></NewsItem>
                     )

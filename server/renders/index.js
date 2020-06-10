@@ -5,7 +5,9 @@ import Browse from '';
 
 const url = process.argv[2];
 
-
+/*
+*  component for  server side rendering
+*/
 
 const buffer = renderToStaticMarkup(
 	<StaticRouter location={url || ''} context={{}}>

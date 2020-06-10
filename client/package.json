@@ -10,6 +10,7 @@
     "cross-env": "^7.0.2",
     "highcharts": "^8.1.0",
     "highcharts-react-official": "^3.0.0",
+    "jest-fetch-mock": "^3.0.3",
     "lodash.assign": "^4.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.find": "^4.6.0",

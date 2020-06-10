@@ -39,6 +39,33 @@ open [http://localhost:9009](http://localhost:9009)
 
 Check All the independent  atoms, molecules, organisms and templates
 
+
+Custom Hook :- 
+    client/src/hooks/use-store.js
+
+Active Component (which are subscribed to store) :- 
+    client/src/App.js
+
+Context Provider to upvote and count clicks :- 
+   client/src/context_providers/news_context
+
+Layout :-
+    client/src/components/templates/index.module.css
+
+Chart :- 
+    client/src/components/organisms/chart/index.js
+
+Store :- 
+    client/src/libs/store.js
+
+Test Cases :-
+    client/src/App.test.js
+    client/src/utils/index.test.js
+    Ajax Call mock : client/src/stores/liststore.test.js
+
+
+
+
 ### Note
 More Enhancements need to abstract create react app setup and css theming
 

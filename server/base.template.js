@@ -18,6 +18,9 @@ import { StaticRouter} = require("react-router");
     );
 } */
 
+/*
+*   method for rendering intital html and replacing root with data
+*/
 exports.renderTemplate = async (ctx) => {
     let html = '';
     let newsList = ctx.pageData;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Count from '../../atoms/count';
 import UpVote from '../../atoms/upvote';
 import NewsDetail from '../../atoms/description';
-import { NewListContext } from '../../../context_providers/newsContext';
+import { NewListContext } from '../../../context_providers/news_context';
 
 
 const NewsItem = ({item, upVoteCount = 0}) => {

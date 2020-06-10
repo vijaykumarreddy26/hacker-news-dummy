@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Styles from './index.module.css';
 
 
-const UpVote = ({upVoteCount, onUpVote}) => {
+const UpVote = ({count, onUpVote}) => {
     return(
         <span tabIndex="0"
             className={Styles.upvote}
             onClick={onUpVote}>
-                ▲ {(upVoteCount > 0) ? upVoteCount : ''}
+                ▲ {(count > 0) ? count : ''}
 
         </span>
     )

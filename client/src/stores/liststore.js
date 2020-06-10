@@ -85,6 +85,7 @@ const NewListStore = new Store({},
             },
             formatter: (data, request, config) => {
                 request.mock = getUserData();
+                return request;
             },
             outputField: 'hideVoteNewsList',
             statusLabel: 'hideNewsListStatus',

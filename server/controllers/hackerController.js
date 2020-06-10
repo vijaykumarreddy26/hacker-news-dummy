@@ -6,8 +6,8 @@ const AgloaUrl = "http://hn.algolia.com/api/v1/search";
 /**
  * Get data from algolia news api
  * @constructor
- * @param {string} tags - Valid User mongoose id.
- * @param {string} numericFilters - Hash.
+ * @param {string} tags - algolia tags to search for.
+ * @param {number} page - get data based on page number.
  */
 exports.fetchData = async (ctx, next) => {
       try{
@@ -27,6 +27,7 @@ exports.fetchData = async (ctx, next) => {
 /**
  * Ge data from algolia news
  * @constructor
+ * 
  */
 exports.fetchDataForHtml = async (ctx, next) => {
     try{
@@ -42,6 +43,9 @@ exports.fetchDataForHtml = async (ctx, next) => {
    await next();
 }
 
+/*
+* render initila html
+*/
 exports.renderTemplate = async (ctx, next) => {
     const body =  await templates.renderTemplate(ctx);
     ctx.body = body;

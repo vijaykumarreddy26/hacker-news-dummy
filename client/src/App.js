@@ -2,7 +2,7 @@ import React, {Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import useStore from './hooks/use-store';
 import ListStore from './stores/liststore';
-import { NewListProvider } from './context_providers/newsContext';
+import { NewListProvider } from './context_providers/news_context';
 import News from './components/organisms/news';
 import DefaultTemplateStyle from './components/templates/index.module.css';
 import Header from './components/organisms/header';
@@ -11,6 +11,7 @@ import LineChart from './components/organisms/chart';
 
 function App({match}) {
 
+    // Register liststore to listen to latest data
   const [listStoreData] = useStore(ListStore);
 
   const { 
@@ -18,6 +19,10 @@ function App({match}) {
     pageNo = 0,
     hideVoteNewsList ={}
     } = listStoreData;
+
+  useEffect(() => {
+    ListStore.load('GetHiddenList');
+  }, [])
 
   useEffect(() => {
      // var latestData = ListStore.get();
