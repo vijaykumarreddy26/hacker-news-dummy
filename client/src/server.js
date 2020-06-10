@@ -5,12 +5,11 @@ import App from './App';
 
 
 const url = process.argv[2];
+global.initialServerData = process.argv[3];
 
 const buffer = renderToString(
-	<StaticRouter location={url || ''} context={{}}>
-		<Switch>
-			<Route path="/:pageNo" component={App} />
-		</Switch>
+	<StaticRouter location={url || ''}>
+		<App match={{params: url}} staticContext={true}></App>
 	</StaticRouter>
 );
 

@@ -16,9 +16,6 @@ module.exports = {
 
 	resolve: {
 		extensions: ['.js', '.jsx'],
-		modules: [
-			'node_modules',
-		],
     },
     module: {
         // configuration regarding modules
@@ -40,7 +37,13 @@ module.exports = {
           },
           {
             test: /\.css$/i,
-            use: ['style-loader', 'css-loader'],
+            use: ['isomorphic-style-loader',{
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                }
+              }],
           },
         ]
     }

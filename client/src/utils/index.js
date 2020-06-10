@@ -41,8 +41,7 @@ export const timeSince = (timeStamp) => {
 
 export const getServerInitialData = () => {
 	if (typeof window == 'undefined') {
-        const initialServerData ={};
-		return !isEmpty(initialServerData) ? JSON.parse(unescape(initialServerData)) : {};
+		return !isEmpty(global.initialServerData) ? JSON.parse(unescape(global.initialServerData)) : {};
 	} else {
 		return window.INITIAL_DATA;
 	}

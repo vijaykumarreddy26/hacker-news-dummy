@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {Fragment, useEffect, useContext} from 'react';
 import PropTypes from 'prop-types';
 import useStore from './hooks/use-store';
 import ListStore from './stores/liststore';
@@ -9,8 +9,7 @@ import Header from './components/organisms/header';
 import Pagination from './components/molecules/pagination';
 import LineChart from './components/organisms/chart';
 
-function App({match}) {
-
+function App({match, staticContext}) {
     // Register liststore to listen to latest data
   const [listStoreData] = useStore(ListStore);
 
@@ -50,9 +49,10 @@ function App({match}) {
       </div>
       <div className={DefaultTemplateStyle.graphWrapper}>
         <div className={DefaultTemplateStyle.graph}>
-            <LineChart data={newsList.hits || []} hideVoteNewsList={hideVoteNewsList}></LineChart>
+            {!staticContext && <LineChart data={newsList.hits || []} hideVoteNewsList={hideVoteNewsList}></LineChart>}
         </div>
      </div>
+      
   </Fragment>
     
   );
