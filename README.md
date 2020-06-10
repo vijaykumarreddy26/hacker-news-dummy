@@ -42,6 +42,9 @@ open [http://localhost:9009](http://localhost:9009)
 $ npm run build:server_renders
 ```
 
+Very first render is from server side then service workers will be registered.Next refresh or open will be served from serivce workers.
+
+
 Server compile code at /server/base.template -- renderServerHtml function
 
 - Running test casees 
