@@ -1,7 +1,6 @@
 const Koa = require('koa');
 const koaRouter = require('@koa/router');
 const serve = require('koa-static');
-const send = require('koa-send');
 const hackerController = require('./controllers/hackerController');
 
 /**
@@ -14,7 +13,9 @@ app.use(async (ctx, next) => {
     if(ctx.path === "/"){
         await next();
     }else {
-        await serve(__dirname + '/../public/')(ctx, next);
+        await serve(__dirname + '/../public/', {
+            maxage: 365 * 24 * 60 * 60,
+        })(ctx,next);
     }   
 });
     
