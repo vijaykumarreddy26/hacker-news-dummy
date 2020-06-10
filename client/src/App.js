@@ -25,12 +25,13 @@ function App({match}) {
   }, [])
 
   useEffect(() => {
-     // var latestData = ListStore.get();
-     // if(latestData.pageNo !== match.params.pageNo){
+     const page =  match.params.pageNo || 1
+     if(pageNo !== page){
         ListStore.set({
-            pageNo: match.params.pageNo || 1,
+            pageNo:page,
         });
         ListStore.load('LoadNewsList');
+     }
      //}
   }, [match.params.pageNo]);
 

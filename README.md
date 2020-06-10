@@ -37,6 +37,12 @@ $ cd client && npm run storybook
 ```
 open [http://localhost:9009](http://localhost:9009)
 
+- Server Rendering bundle generation
+```bash
+$ npm run build:server_renders
+```
+
+Server compile code at /server/base.template -- renderServerHtml function
 
 - Running test casees 
 ```bash

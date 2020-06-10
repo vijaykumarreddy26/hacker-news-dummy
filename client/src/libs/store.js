@@ -18,7 +18,7 @@ export default class Store {
             serverData = loadServerData.call(this);
         }
         this.initialValue = merge({}, initialValue, serverData);
-        this.stream = new BehaviorSubject(initialValue);
+        this.stream = new BehaviorSubject(this.initialValue);
         this.requestStream = new Subject();
         this.registerObservables(this.observers);
         this.registerFetchObserver();

@@ -4,7 +4,7 @@ import Styles from './index.module.css';
 
 const Header = ({headerClassName}) => {
     return ( 
-        <header className={headerClassName}>
+        <header c   lassName={headerClassName}>
             <button className={Styles.linkButton} >
                 <Logo></Logo>
             </button>

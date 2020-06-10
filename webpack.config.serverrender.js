@@ -1,16 +1,16 @@
 var webpack = require('webpack');
 
 module.exports = {
+    mode: 'production',
 	entry: {
 		renders: [
 			'./client/src/server.js',
 		],
 	},
-
 	target: 'node',
 	output: {
 		path: __dirname + '/server_renders/',
-		filename: 'server.js',
+		filename: 'page.js',
 		publicPath: '/',
 	},
 
@@ -33,10 +33,15 @@ module.exports = {
             loader: "babel-loader",
             // the loader which should be applied, it'll be resolved relative to the context           
             options: {
-              presets: ["@babel/preset-env", "@babel/preset-react", "es2015"]
+              presets: ["@babel/preset-env", "@babel/preset-react"],
+              plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-object-rest-spread"]
             },
             // options for the loader
-          }
+          },
+          {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
+          },
         ]
     }
 };
