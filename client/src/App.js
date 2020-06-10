@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useContext} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import useStore from './hooks/use-store';
 import ListStore from './stores/liststore';
