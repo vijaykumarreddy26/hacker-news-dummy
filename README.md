@@ -48,9 +48,6 @@ $ cd client && npm run test
 $ cd client && npm run coverage
 ```
 
-
-
-
 Check All the independent  atoms, molecules, organisms and templates
 
 
@@ -72,14 +69,14 @@ Chart :-
 Store :- 
     client/src/libs/store.js
 
-Test Cases :-
+Test Cases :- \
     - client/src/App.test.js \
     - client/src/utils/index.test.js \
     - Ajax Call mock : client/src/stores/liststore.test.js
 
 
 ### Note
-More Enhancements need to abstract create react app setup and css theming
+More Enhancements needed to abstract create react app setup and css theming
 
 ## License
 
