@@ -10,7 +10,6 @@ const hackerController = require('./controllers/hackerController');
 const app = new Koa();
 const PORT = process.env.PORT || 9000;
 
-app.use(serve(__dirname + '/../public/'));
 
 // app.use(mount('/static', serve(__dirname + '/static', {defer: true})))
 /*app.use(async (ctx) => {
@@ -33,6 +32,8 @@ router.get('/:pageNo?', hackerController.fetchDataForHtml, hackerController.rend
 *   Attach routes to app instance
 */
 app.use(router.routes());
+
+app.use(serve(__dirname + '/../public/'));
 
 
 app.listen(PORT);
