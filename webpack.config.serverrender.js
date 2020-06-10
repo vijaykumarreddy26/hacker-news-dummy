@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+const MiniCssExtractPlugin = require('./client/node_modules/mini-css-extract-plugin');
+var getCSSModuleLocalIdent = require('./client/node_modules/react-dev-utils/getCSSModuleLocalIdent');
 
 module.exports = {
     mode: 'production',
@@ -37,11 +39,14 @@ module.exports = {
           },
           {
             test: /\.css$/i,
-            use: ['isomorphic-style-loader',{
+            use: ['isomorphic-style-loader',
+                {
                 loader: 'css-loader',
                 options: {
                   importLoaders: 1,
-                  modules: true,
+                  modules: {
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
                 }
               }],
           },

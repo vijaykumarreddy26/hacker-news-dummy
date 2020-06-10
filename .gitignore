@@ -5,6 +5,8 @@
 
 /server_renders
 
+/public
+
 # misc
 .DS_Store
 
