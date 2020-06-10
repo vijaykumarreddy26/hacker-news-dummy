@@ -37,6 +37,20 @@ $ cd client && npm run storybook
 ```
 open [http://localhost:9009](http://localhost:9009)
 
+
+- Running test casees 
+```bash
+$ cd client && npm run test
+```
+
+- Running Coverage 
+```bash
+$ cd client && npm run coverage
+```
+
+
+
+
 Check All the independent  atoms, molecules, organisms and templates
 
 
