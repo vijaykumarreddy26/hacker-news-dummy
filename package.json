@@ -9,8 +9,8 @@
     "server": "node ./server/index.js",
     "client": "BROWSER=none npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm install && npm run build && npm run build:server_renders",
-    "build:server_renders": "cross-env NODE_ENV=production webpack --config webpack.config.serverrender.js"
+    "build:server_renders": "cross-env NODE_ENV=production webpack --config webpack.config.serverrender.js",
+    "build": "cd client && npm install && npm run build && cd ../ && npm run build:server_renders"
   },
   "author": "",
   "license": "ISC",
