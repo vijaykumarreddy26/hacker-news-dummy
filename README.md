@@ -59,9 +59,9 @@ Store :-
     client/src/libs/store.js
 
 Test Cases :-
-    client/src/App.test.js
-    client/src/utils/index.test.js
-    Ajax Call mock : client/src/stores/liststore.test.js
+    - client/src/App.test.js
+    - client/src/utils/index.test.js
+    - Ajax Call mock : client/src/stores/liststore.test.js
 
 
 
