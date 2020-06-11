@@ -18,6 +18,7 @@ pipeline {
           steps {
             sh "cd client"
             sh "npm install"
+            sh "../"
           }
         }
         stage('client build'){

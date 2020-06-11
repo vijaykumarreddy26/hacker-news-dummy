@@ -23,6 +23,7 @@
 }
   .table th {
     font-weight: bold;
+    word-break: break-all;
   }
   .table tfoot {
     font-weight: bold;
