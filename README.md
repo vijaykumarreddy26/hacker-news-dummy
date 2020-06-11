@@ -1,7 +1,9 @@
 # Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS + RxJs + Custom hooks
 
 [![Build status][travis-image]][travis-url]
-[![CircleCI] [!https://circleci.com/gh/circleci/circleci-docs.svg?style=svg ][!https://app.circleci.com/pipelines/github/vijaykumarreddy26/hacker-news-dummy]
+[![CircleCI][circleci-image]][circleci-url]
+
+
 
 
 This Project is setup for modern web application
@@ -95,7 +97,7 @@ More Enhancements needed to abstract create react app setup and css theming
 
 [travis-image]: https://img.shields.io/travis/koajs/send.svg?style=flat-square
 [travis-url]: https://travis-ci.org/github/vijaykumarreddy26/hacker-news-dummy
-
-
+[circleci-image]: https://circleci.com/gh/circleci/circleci-docs.svg?style=svg
+[circleci-url]: https://app.circleci.com/pipelines/github/vijaykumarreddy26/hacker-news-dummy
 
 

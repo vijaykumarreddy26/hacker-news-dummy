@@ -2,6 +2,7 @@ const Koa = require('koa');
 const koaRouter = require('@koa/router');
 const serve = require('koa-static');
 const hackerController = require('./controllers/hackerController');
+const koaCompress = require('koa-compress');
 
 /**
  * create koa app instance
@@ -9,6 +10,7 @@ const hackerController = require('./controllers/hackerController');
 const app = new Koa();
 const PORT = process.env.PORT || 9000;
 
+app.use(koaCompress());
 app.use(async (ctx, next) => {
     if(ctx.path === "/"){
         await next();
