@@ -18,13 +18,13 @@ jobs:
         executor: node
         steps:
             - checkout
-            - run: npm install
-            - run: npm install --prefix client
+            - run: npm install  --no-package-lock
+            - run: npm install --prefix client  --no-package-lock
             - run: npm run build
     test:
         executor: node
         steps:
             - checkout
-            - run: npm install
-            - run: npm install --prefix client
+            - run: npm install  --no-package-lock
+            - run: npm install --prefix client  --no-package-lock
             - run: npm run test
