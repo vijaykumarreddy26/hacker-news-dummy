@@ -8,7 +8,7 @@ const UpVote = ({count, onUpVote}) => {
         <span tabIndex="0"
             className={Styles.upvote}
             onClick={onUpVote}>
-                ▲ {(count > 0) ? count : ''}
+                ▲
 
         </span>
     )
