@@ -10,7 +10,8 @@ const getConfig = (data, hideVoteNewsList) => {
     map(data, (value) => {
         if(!get(hideVoteNewsList[value.objectID], 'hide')){
             categores.push(value.objectID);
-            points.push(value.num_comments);
+            var count  =get(hideVoteNewsList[value.objectID], 'votes', 0)
+            points.push(value.points + count);
         }
     })
     return {
