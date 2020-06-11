@@ -3,9 +3,8 @@ orbs:
     heroku: circleci/heroku@0.0.10
 executors:
     node:
-        working_directory: ~/code
         docker:
-            - image: circleci/node:10
+            - image: circleci/node:latest
 workflows:
     version: 2
     build_and_test:
@@ -18,13 +17,21 @@ jobs:
         executor: node
         steps:
             - checkout
-            - run: npm install
-            - run: npm install --prefix client
+            - node/install-packages:
+                cache-path: ~/project/node_modules
+                override-ci-command: npm install
+            - node/install-packages:
+                cache-path: ~/project/client/node_modules
+                override-ci-command: npm install --prefix client
             - run: npm run build
     test:
         executor: node
         steps:
             - checkout
-            - run: npm install
-            - run: npm install --prefix client
+            - node/install-packages:
+                cache-path: ~/project/node_modules
+                override-ci-command: npm install
+            - node/install-packages:
+                cache-path: ~/project/client/node_modules
+                override-ci-command: npm install --prefix client
             - run: npm run test
