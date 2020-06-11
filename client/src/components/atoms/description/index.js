@@ -24,9 +24,9 @@ const NewsDetail = ({title, author, created_at, url, onHide}) => {
                     </label>
                 </span>
                 <span className={Styles.subtext}> 
-                    <a onClick={onHide} tabIndex="0">
+                    <button  type="button" className={Styles.linkButton} onClick={onHide}>
                         &nbsp; [hide]
-                    </a>
+                    </button>
                 </span>
             </div>
         </div>
