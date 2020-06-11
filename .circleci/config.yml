@@ -3,6 +3,7 @@ orbs:
     heroku: circleci/heroku@0.0.10
 executors:
     node:
+        working_directory: ~/repo
         docker:
             - image: circleci/node:10
 workflows:
