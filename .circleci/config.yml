@@ -3,7 +3,7 @@ orbs:
     heroku: circleci/heroku@0.0.10
 executors:
     node:
-        working_directory: ~/repo
+        working_directory: ~/code
         docker:
             - image: circleci/node:10
 workflows:
@@ -15,12 +15,14 @@ workflows:
             - heroku/deploy-via-git
 jobs:
     build:
+        executor: node
         steps:
             - checkout
             - run: npm install
             - run: npm install --prefix client
             - run: npm run build
     test:
+        executor: node
         steps:
             - checkout
             - run: npm install
