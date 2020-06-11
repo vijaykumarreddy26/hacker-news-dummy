@@ -11,24 +11,25 @@ workflows:
         jobs:
             - test
             - build
-    jobs:
-        build:
-            executor: node
-            steps:
-                - checkout
-                - run: npm install
-                - run: npm install --prefix client
-                - run: npm run build
-        test:
-            executor: node
-            steps:
-                - checkout
-                - run: npm install
-                - run: npm install --prefix client
-                - run: npm run test
-        heroku/deploy-via-git:
-            requires:
-                - build
-            filters:
-                branches:
-                    only: master
+            - heroku/deploy-via-git
+jobs:
+    build:
+        executor: node
+        steps:
+            - checkout
+            - run: npm install
+            - run: npm install --prefix client
+            - run: npm run build
+    test:
+        executor: node
+        steps:
+            - checkout
+            - run: npm install
+            - run: npm install --prefix client
+            - run: npm run test
+    heroku/deploy-via-git:
+        requires:
+            - build
+        filters:
+            branches:
+                only: master
