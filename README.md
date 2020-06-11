@@ -1,7 +1,7 @@
 # Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS + RxJs + Custom hooks
 
 [![Build status][travis-image]][travis-url]
-[![CircleCI][(https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)][(https://app.circleci.com/pipelines/github/vijaykumarreddy26/hacker-news-dummy)]
+[![CircleCI] [!https://circleci.com/gh/circleci/circleci-docs.svg?style=svg ][!https://app.circleci.com/pipelines/github/vijaykumarreddy26/hacker-news-dummy]
 
 
 This Project is setup for modern web application
