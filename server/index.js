@@ -14,7 +14,7 @@ app.use(async (ctx, next) => {
         await next();
     }else {
         await serve(__dirname + '/../public/', {
-            maxage: 365 * 24 * 60 * 60,
+            maxAge: 365 * 24 * 60 * 60,
         })(ctx,next);
     }   
 });
