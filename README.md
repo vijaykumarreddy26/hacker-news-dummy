@@ -1,4 +1,4 @@
-# Koa + React + SSR + ATOMIC DESIGN + STORYBOARD + MODULE CSS + RxJs + Custom hooks
+# Koa + React + SSR + ATOMIC DESIGN + STORYBOOK + MODULE CSS + RxJs + Custom hooks
 
 [![Build status][travis-image]][travis-url]
 [![CircleCI][circleci-image]][circleci-url]
