@@ -31,7 +31,7 @@ Launch the server:
 $ npm run dev
 ```
 
-Now, the application is running at [http://localhost:9000](http://localhost:9000)
+Now, the application is running at [http://localhost:9000](http://localhost:9000) or [http://localhost:3000](http://localhost:3000)
 
 
 - For independent component development  (ATOMIC DEVELOPMENT)
@@ -40,10 +40,12 @@ $ cd client && npm run storybook
 ```
 open [http://localhost:9009](http://localhost:9009)
 
-- Server Rendering bundle generation
+- Running in Production mode
 ```bash
-$ npm run build:server_renders
+$ npm run build
+$ npm start
 ```
+Now, the application is running at [http://localhost:9000](http://localhost:9000)
 
 Very first render is from server side then service workers will be registered.Next refresh or open will be served from serivce workers.
 
@@ -85,6 +87,9 @@ Test Cases :- \
     - client/src/App.test.js \
     - client/src/utils/index.test.js \
     - Ajax Call mock : client/src/stores/liststore.test.js
+    
+CI/CD :- \
+    .circleci/config.yml
 
 
 ### Note
