@@ -26,6 +26,8 @@ import { StaticRouter} = require("react-router");
 const renderServerHtml = async (url, data) => {
     return new Promise((resolve) => {
         exec(`node ${path.resolve('server_renders/page.js')} ${url} ${escape(data)}`, {env: {PUBLIC_URL: ''}}, (err, stdout, stderr) => {
+            console.log(err);
+            console.log(stderr);
             resolve(stdout? stdout : '');
         });
     });
